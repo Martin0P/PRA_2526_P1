@@ -6,7 +6,7 @@ class List {
     public:
         virtual ~List() = default;
 
-	virtual void insert(int post, const T& e) = 0;
+	virtual void insert(int pos, const T& e) = 0;
 	virtual void append(const T& e){ insert(size(), e);} 	// final = size()
 	virtual void prepend(const T& e){ insert(0, e);}		// inicio = 0
 	
