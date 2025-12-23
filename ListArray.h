@@ -29,7 +29,7 @@ class ListArray : public List<T> {
 
 	}
     public:
-	ListArray(): arr(nullptr), max(MINSIZE), n(0) {}
+	ListArray(): arr(new T[MINSIZE]), max(MINSIZE), n(0) {}
         ~ListArray() override {delete[] arr; }
 	
 	// Metodos de LIST<T>
@@ -41,7 +41,7 @@ class ListArray : public List<T> {
 	    if(n == max) resize(max * 2);
 
 	    for(int i = n; i > pos; --i){
-	        arr[i] == arr[i -1]; 
+	        arr[i] = arr[i -1]; 
 	    }
 	    arr[pos] = e;
 	    ++n;
@@ -53,7 +53,7 @@ class ListArray : public List<T> {
 	    T removed = arr[pos];
 
 	    for(int i = pos; i < n -1; i++){
-	    	arr[i] = arr[i +n]; 
+	    	arr[i] = arr[i + 1]; 
 	    }
 	    --n;
 
