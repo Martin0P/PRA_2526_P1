@@ -13,7 +13,7 @@ std::string Shape::get_color() const {
 }
 
 void Shape::set_color(const std::string& c) {
-    if (c !="red"  || c != "green" || c != "blue") {
+    if (c !="red"  && c != "green" && c != "blue") {
         throw std::invalid_argument("Color no válido");
     }
     color = c;
