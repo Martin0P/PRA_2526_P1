@@ -16,14 +16,14 @@ bool Square::check(Point2D* vertices) {
 }
 
 Square::Square() : Rectangle() {
-    // Sobrescribo los vértices por defecto del cuadrado
+    // Sobrescribe los vértices 
     Point2D tmp[N_VERTICES] = {Point2D(-1, 1), Point2D(1, 1), Point2D(1, -1), Point2D(-1, -1)};
     set_vertices(tmp);
 }
 
 Square::Square(std::string color, Point2D* vertices) : Rectangle() {
-    set_color(color);       // valida el color (Shape)
-    set_vertices(vertices); // valida que es cuadrado
+    set_color(color);       
+    set_vertices(vertices); 
 }
 
 void Square::set_vertices(Point2D* vertices) {
@@ -31,7 +31,7 @@ void Square::set_vertices(Point2D* vertices) {
         throw std::invalid_argument("Provided vertices do not build a valid square!");
     }
 
-    // Guardamos los 4 vértices en el array heredado (vs)
+    // Guarda los vértices en el array
     for (int i = 0; i < N_VERTICES; ++i) {
         vs[i] = vertices[i];
     }
